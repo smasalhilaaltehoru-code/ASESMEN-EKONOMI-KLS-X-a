@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesmen Sumatif Akhir Semester - Ekonomi Kelas X (Fase E) | SMAS AL-HILAAL TEHORU</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            950: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-brand-900 text-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white/10 p-2 rounded-xl border border-white/20">
+                    <i class="fa-solid fa-graduation-cap text-yellow-400 text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-base sm:text-lg leading-tight">SMAS AL-HILAAL TEHORU</h1>
+                    <p class="text-xs text-brand-100 flex items-center gap-2">
+                        <span><i class="fa-solid fa-book-open text-xs"></i> Ekonomi Kelas X (Fase E)</span>
+                        <span class="hidden sm:inline">•</span>
+                        <span class="hidden sm:inline"><i class="fa-solid fa-user-tie text-xs"></i> Sumila Mahu, S.Pd.</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div id="header-timer" class="hidden items-center bg-red-600/90 text-white font-mono px-3 py-1.5 rounded-lg font-bold text-sm shadow animate-pulse">
+                <i class="fa-regular fa-clock mr-2"></i>
+                <span id="timer-display">90:00</span>
+            </div>
+
+            <button onclick="switchView('admin-login')" class="text-xs sm:text-sm bg-brand-800 hover:bg-brand-700 px-3 py-1.5 rounded-lg font-medium transition flex items-center gap-1.5 border border-brand-600">
+                <i class="fa-solid fa-user-shield"></i>
+                <span>Portal Guru</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6">
+        
+        <!-- ================= PAGE 1: BERANDA ================= -->
+        <section id="view-home" class="space-y-6 max-w-4xl mx-auto py-4">
+            <div class="bg-gradient-to-br from-brand-900 via-brand-800 to-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-xl border border-brand-700 relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
+                    <i class="fa-solid fa-chart-line text-[240px]"></i>
+                </div>
+                <div class="relative z-10 space-y-4">
+                    <span class="bg-brand-500/30 text-brand-100 border border-brand-400/30 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider inline-block">
+                        Semester Genap • Tahun Ajaran 2026/2027
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Asesmen Sumatif Akhir Semester <br><span class="text-yellow-400">Pengantar Ilmu Ekonomi</span>
+                    </h2>
+                    <p class="text-brand-100 text-sm sm:text-base max-w-2xl">
+                        Selamat datang di portal asesmen digital SMAS Al-Hilaal Tehoru. Ujian ini dirancang untuk menguji pemahaman Anda terhadap konsep dasar ekonomi, kelangkaan, skala prioritas, serta analisis masalah ekonomi sekitar masyarakat Tehoru & Maluku.
+                    </p>
+                    
+                    <div class="pt-4 flex flex-wrap gap-4 items-center">
+                        <button onclick="switchView('student-info')" class="bg-yellow-400 hover:bg-yellow-300 text-brand-950 font-bold px-8 py-3.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-3 text-base">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>MULAI ASESMEN</span>
+                        </button>
+                        <button onclick="switchView('instructions')" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl border border-white/20 transition flex items-center gap-2 text-sm">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>Petunjuk Ujian</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INFO CARDS -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="glass-card p-5 rounded-2xl shadow-sm border border-slate-200 flex items-start space-x-4">
+                    <div class="bg-blue-100 text-brand-700 p-3 rounded-xl"><i class="fa-solid fa-list-check text-xl"></i></div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-sm">40 Soal Evaluasi</h3>
+                        <p class="text-xs text-slate-500 mt-1">25 Pilihan Ganda, 5 Benar/Salah, 5 Menjodohkan, & 5 Studi Kasus HOTS.</p>
+                    </div>
+                </div>
+                <div class="glass-card p-5 rounded-2xl shadow-sm border border-slate-200 flex items-start space-x-4">
+                    <div class="bg-amber-100 text-amber-700 p-3 rounded-xl"><i class="fa-regular fa-clock text-xl"></i></div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-sm">Waktu 90 Menit</h3>
+                        <p class="text-xs text-slate-500 mt-1">Timer otomatis berjalan setelah Anda menekan tombol mulai.</p>
+                    </div>
+                </div>
+                <div class="glass-card p-5 rounded-2xl shadow-sm border border-slate-200 flex items-start space-x-4">
+                    <div class="bg-emerald-100 text-emerald-700 p-3 rounded-xl"><i class="fa-solid fa-award text-xl"></i></div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-sm">Penilaian Otomatis</h3>
+                        <p class="text-xs text-slate-500 mt-1">Hasil & umpan balik dapat langsung dilihat setelah menekan Selesai.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 2: IDENTITAS PESERTA DIDIK ================= -->
+        <section id="view-student-info" class="hidden max-w-xl mx-auto py-6">
+            <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-200">
+                <div class="text-center mb-6">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-800 rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl">
+                        <i class="fa-solid fa-user-pen"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-800">Identitas Peserta Didik</h2>
+                    <p class="text-xs text-slate-500">Lengkapi data diri Anda secara benar sebelum memulai ujian.</p>
+                </div>
+
+                <form id="form-student" onsubmit="handleStudentForm(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Nama Lengkap</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400"><i class="fa-solid fa-user"></i></span>
+                            <input type="text" id="input-student-name" required placeholder="Contoh: Ahmad Abdullah" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Kelas / Fase</label>
+                            <select id="input-student-class" required class="w-full px-3 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition text-sm">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X-1">X - 1 (Fase E)</option>
+                                <option value="X-2">X - 2 (Fase E)</option>
+                                <option value="X-3">X - 3 (Fase E)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Nomor Absen</label>
+                            <input type="number" id="input-student-no" required min="1" max="50" placeholder="Contoh: 15" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition text-sm">
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex gap-3">
+                        <button type="button" onclick="switchView('home')" class="w-1/3 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-sm transition">
+                            Kembali
+                        </button>
+                        <button type="submit" class="w-2/3 py-3 bg-brand-800 hover:bg-brand-700 text-white font-bold rounded-xl text-sm shadow-md transition flex items-center justify-center gap-2">
+                            <span>Lanjutkan</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 3: PETUNJUK PENGERJAAN ================= -->
+        <section id="view-instructions" class="hidden max-w-2xl mx-auto py-6">
+            <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6">
+                <div class="flex items-center space-x-4 border-b border-slate-200 pb-4">
+                    <div class="bg-amber-100 text-amber-700 p-3 rounded-2xl">
+                        <i class="fa-solid fa-clipboard-list text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">Petunjuk Pengerjaan Asesmen</h2>
+                        <p class="text-xs text-slate-500">Harap membaca petunjuk berikut sebelum memulai.</p>
+                    </div>
+                </div>
+
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check-circle text-emerald-500 mt-1"></i>
+                        <span>Soal berjumlah <strong>40 nomor</strong> dengan alokasi waktu pengerjaan <strong>90 menit</strong>.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check-circle text-emerald-500 mt-1"></i>
+                        <span>Terdapat 4 jenis bentuk soal: Pilihan Ganda, Benar/Salah, Menjodohkan Pasangan, dan Studi Kasus HOTS.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check-circle text-emerald-500 mt-1"></i>
+                        <span>Gunakan tombol navigasi <strong>Sebelumnya</strong> dan <strong>Berikutnya</strong> atau tekan nomor pada grid navigasi untuk berpindah soal.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check-circle text-emerald-500 mt-1"></i>
+                        <span>Sistem secara otomatis menyimpan jawaban Anda. Pastikan jaringan internet tetap aktif hingga selesai mengirim jawaban.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check-circle text-emerald-500 mt-1"></i>
+                        <span>Dilarang keras melakukan kecurangan, membuka tab baru, atau bekerjasama dengan peserta ujian lain.</span>
+                    </li>
+                </ul>
+
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" id="accept-instructions" class="w-5 h-5 text-brand-600 rounded focus:ring-brand-500">
+                        <span class="text-xs font-medium text-slate-700">Saya telah membaca dan memahami seluruh petunjuk di atas.</span>
+                    </label>
+                </div>
+
+                <div class="flex gap-3">
+                    <button onclick="switchView('student-info')" class="w-1/3 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-sm transition">
+                        Edit Data
+                    </button>
+                    <button onclick="startExam()" class="w-2/3 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Mulai Kerjakan Soal</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 4: HALAMAN PENGERJAAN SOAL ================= -->
+        <section id="view-exam" class="hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                
+                <!-- QUESTION AREA (LEFT 3 COLS) -->
+                <div class="lg:col-span-3 space-y-4">
+                    
+                    <!-- PROGRESS & QUESTION TITLE -->
+                    <div class="glass-card p-4 rounded-2xl shadow-sm border border-slate-200 flex flex-wrap justify-between items-center gap-3">
+                        <div>
+                            <span id="question-type-badge" class="bg-brand-100 text-brand-800 text-xs font-bold px-2.5 py-1 rounded-md uppercase">Pilihan Ganda</span>
+                            <h2 class="text-lg font-bold text-slate-800 mt-1">Soal No. <span id="current-q-num">1</span> <span class="text-slate-400 font-normal">/ 40</span></h2>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button onclick="toggleFlagCurrentQuestion()" id="btn-flag" class="px-3 py-1.5 rounded-lg border border-slate-300 text-slate-600 hover:bg-slate-100 text-xs font-semibold flex items-center gap-1.5">
+                                <i class="fa-regular fa-bookmark"></i>
+                                <span>Tandai Ragu</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- QUESTION CARD -->
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200 min-h-[360px] flex flex-col justify-between">
+                        <div>
+                            <!-- QUESTION STATEMENT -->
+                            <div id="question-text" class="text-slate-800 font-medium text-base sm:text-lg leading-relaxed mb-6">
+                                Loading soal...
+                            </div>
+
+                            <!-- DYNAMIC ANSWER OPTIONS CONTAINER -->
+                            <div id="options-container" class="space-y-3">
+                                <!-- Generated by JS based on question type -->
+                            </div>
+                        </div>
+
+                        <!-- EXAM BOTTOM NAV -->
+                        <div class="flex justify-between items-center pt-6 mt-6 border-t border-slate-200">
+                            <button id="btn-prev" onclick="navigateQuestion(-1)" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-sm transition flex items-center gap-2">
+                                <i class="fa-solid fa-chevron-left text-xs"></i>
+                                <span>Sebelumnya</span>
+                            </button>
+
+                            <button id="btn-next" onclick="navigateQuestion(1)" class="px-5 py-2.5 bg-brand-800 hover:bg-brand-700 text-white font-bold rounded-xl text-sm transition flex items-center gap-2">
+                                <span>Berikutnya</span>
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+
+                            <button id="btn-submit-exam" onclick="confirmFinishExam()" class="hidden px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-sm transition flex items-center gap-2 shadow-md">
+                                <i class="fa-solid fa-check-double"></i>
+                                <span>SELESAI ASESMEN</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR NAVIGATOR (RIGHT 1 COL) -->
+                <div class="lg:col-span-1 space-y-4">
+                    <div class="glass-card p-4 sm:p-5 rounded-3xl shadow-sm border border-slate-200">
+                        <h3 class="font-bold text-slate-800 text-sm mb-3 flex items-center justify-between">
+                            <span>Navigasi Soal</span>
+                            <span class="text-xs font-normal text-slate-500"><span id="answered-count">0</span>/40 Terjawab</span>
+                        </h3>
+
+                        <!-- QUESTION GRID -->
+                        <div id="question-grid" class="grid grid-cols-5 sm:grid-cols-8 lg:grid-cols-5 gap-2 max-h-[380px] overflow-y-auto custom-scrollbar p-1">
+                            <!-- Generated Grid Items -->
+                        </div>
+
+                        <!-- LEGEND -->
+                        <div class="mt-5 pt-4 border-t border-slate-200 text-xs space-y-2">
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <span class="w-3.5 h-3.5 bg-emerald-500 rounded-sm"></span>
+                                <span>Sudah dijawab</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <span class="w-3.5 h-3.5 bg-amber-400 rounded-sm"></span>
+                                <span>Ragu-ragu</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <span class="w-3.5 h-3.5 bg-slate-200 rounded-sm"></span>
+                                <span>Belum dijawab</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <button onclick="confirmFinishExam()" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition shadow">
+                                Akhiri Asesmen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= PAGE 5: HASIL ASESMEN ================= -->
+        <section id="view-result" class="hidden max-w-3xl mx-auto py-6">
+            <div class="glass-card p-6 sm:p-10 rounded-3xl shadow-xl border border-slate-200 space-y-8">
+                <!-- SCORE HEADER -->
+                <div class="text-center space-y-3">
+                    <div class="inline-block p-4 bg-emerald-100 text-emerald-600 rounded-full mb-1">
+                        <i class="fa-solid fa-trophy text-4xl"></i>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-800">Hasil Asesmen Sumatif</h2>
+                    <p class="text-xs text-slate-500">Asesmen Ekonomi Kelas X (Fase E) - SMAS AL-HILAAL TEHORU</p>
+                </div>
+
+                <!-- STUDENT RECAP & SCORE -->
+                <div class="bg-gradient-to-r from-brand-900 to-slate-900 rounded-2xl p-6 text-white grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                    <div class="md:col-span-2 space-y-2">
+                        <p class="text-xs text-brand-200 uppercase font-semibold">Identitas Siswa</p>
+                        <h3 id="res-student-name" class="text-xl font-bold text-yellow-400">-</h3>
+                        <p id="res-student-meta" class="text-sm text-brand-100">Kelas: - | No. Absen: -</p>
+                        <p id="res-student-time" class="text-xs text-slate-300">Waktu Selesai: -</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-xl border border-white/10 text-center">
+                        <p class="text-xs text-brand-200 uppercase font-semibold">Nilai Akhir</p>
+                        <div id="res-final-score" class="text-5xl font-black text-white my-1">0</div>
+                        <span id="res-status-badge" class="px-3 py-1 bg-emerald-500 text-white text-xs font-bold rounded-full inline-block">Sangat Baik</span>
+                    </div>
+                </div>
+
+                <!-- DETAILED STATS -->
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <p class="text-xs font-semibold text-slate-500">Benar</p>
+                        <p id="res-correct" class="text-2xl font-bold text-emerald-600">0</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <p class="text-xs font-semibold text-slate-500">Salah / Kosong</p>
+                        <p id="res-incorrect" class="text-2xl font-bold text-red-500">0</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <p class="text-xs font-semibold text-slate-500">Total Soal</p>
+                        <p class="text-2xl font-bold text-brand-700">40</p>
+                    </div>
+                </div>
+
+                <!-- FEEDBACK & RECOMMENDATIONS -->
+                <div class="bg-blue-50 border border-blue-200 p-5 rounded-2xl space-y-2">
+                    <h4 class="font-bold text-brand-900 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-comment-dots"></i>
+                        <span>Umpan Balik Pembelajaran</span>
+                    </h4>
+                    <p id="res-feedback-text" class="text-xs text-slate-700 leading-relaxed">
+                        -
+                    </p>
+                </div>
+
+                <div class="flex gap-4">
+                    <button onclick="switchView('home')" class="w-full py-3 bg-brand-800 hover:bg-brand-700 text-white font-bold rounded-xl text-sm transition shadow">
+                        Kembali ke Beranda
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 6: HALAMAN ADMIN / GURU ================= -->
+        <!-- ADMIN LOGIN MODAL / VIEW -->
+        <section id="view-admin-login" class="hidden max-w-md mx-auto py-8">
+            <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6">
+                <div class="text-center space-y-2">
+                    <div class="w-12 h-12 bg-brand-900 text-white rounded-2xl flex items-center justify-center mx-auto text-xl">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-800">Portal Guru / Admin</h2>
+                    <p class="text-xs text-slate-500">Masukkan kode PIN akses untuk melihat rekapitulasi nilai.</p>
+                </div>
+
+                <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">PIN Akses (Default: 1234)</label>
+                        <input type="password" id="input-admin-pin" required placeholder="Masukkan PIN" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 outline-none text-center text-lg tracking-widest">
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-brand-800 hover:bg-brand-700 text-white font-bold rounded-xl text-sm shadow transition">
+                        Masuk Dashboard
+                    </button>
+                    <button type="button" onclick="switchView('home')" class="w-full py-2 text-xs text-slate-500 hover:text-slate-700 font-semibold">
+                        Batal
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ADMIN DASHBOARD -->
+        <section id="view-admin-dashboard" class="hidden space-y-6">
+            <div class="glass-card p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-wrap justify-between items-center gap-4">
+                <div>
+                    <h2 class="text-xl font-bold text-slate-800">Rekapitulasi Nilai Asesmen Sumatif</h2>
+                    <p class="text-xs text-slate-500">Mata Pelajaran Ekonomi Kelas X • Guru: Sumila Mahu, S.Pd.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="exportToCSV()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl transition flex items-center gap-2">
+                        <i class="fa-solid fa-file-excel"></i>
+                        <span>Ekspor Excel/CSV</span>
+                    </button>
+                    <button onclick="clearAllData()" class="px-4 py-2 bg-red-100 hover:bg-red-200 text-red-700 text-xs font-bold rounded-xl transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-trash"></i>
+                        <span>Reset Data</span>
+                    </button>
+                    <button onclick="switchView('home')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition">
+                        Keluar
+                    </button>
+                </div>
+            </div>
+
+            <!-- FILTERS & STATS -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="glass-card p-4 rounded-2xl border border-slate-200">
+                    <p class="text-xs font-semibold text-slate-500">Total Peserta Ujian</p>
+                    <p id="admin-stat-total" class="text-2xl font-bold text-slate-800 mt-1">0</p>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border border-slate-200">
+                    <p class="text-xs font-semibold text-slate-500">Rata-Rata Nilai</p>
+                    <p id="admin-stat-avg" class="text-2xl font-bold text-brand-700 mt-1">0</p>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border border-slate-200">
+                    <p class="text-xs font-semibold text-slate-500">Nilai Tertinggi</p>
+                    <p id="admin-stat-max" class="text-2xl font-bold text-emerald-600 mt-1">0</p>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border border-slate-200">
+                    <p class="text-xs font-semibold text-slate-500">Nilai Terendah</p>
+                    <p id="admin-stat-min" class="text-2xl font-bold text-red-500 mt-1">0</p>
+                </div>
+            </div>
+
+            <!-- SEARCH & RECAP TABLE -->
+            <div class="glass-card p-6 rounded-3xl shadow-sm border border-slate-200 space-y-4">
+                <div class="flex flex-wrap gap-4 justify-between items-center">
+                    <div class="relative w-full sm:w-64">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400"><i class="fa-solid fa-search"></i></span>
+                        <input type="text" id="admin-search-input" onkeyup="filterAdminTable()" placeholder="Cari Nama Siswa..." class="w-full pl-9 pr-4 py-2 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                    <select id="admin-class-filter" onchange="filterAdminTable()" class="px-3 py-2 rounded-xl border border-slate-300 text-xs outline-none">
+                        <option value="ALL">Semua Kelas</option>
+                        <option value="X-1">Kelas X-1</option>
+                        <option value="X-2">Kelas X-2</option>
+                        <option value="X-3">Kelas X-3</option>
+                    </select>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs text-slate-700">
+                        <thead class="bg-slate-100 uppercase text-slate-600 font-bold border-b border-slate-200">
+                            <tr>
+                                <th class="p-3">No</th>
+                                <th class="p-3">Nama Siswa</th>
+                                <th class="p-3">Kelas</th>
+                                <th class="p-3">Absen</th>
+                                <th class="p-3">Benar</th>
+                                <th class="p-3">Salah</th>
+                                <th class="p-3">Nilai Akhir</th>
+                                <th class="p-3">Waktu Selesai</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-table-body" class="divide-y divide-slate-200">
+                            <!-- Filled dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-4 text-center border-t border-slate-800">
+        <p>© 2026 SMAS AL-HILAAL TEHORU • Pengantar Ilmu Ekonomi Kelas X Fase E • Guru: Sumila Mahu, S.Pd.</p>
+    </footer>
+
+    <!-- CONFIRMATION MODAL -->
+    <div id="finish-modal" class="hidden fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full space-y-4 text-center shadow-2xl border border-slate-200">
+            <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto text-2xl">
+                <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800">Akhiri Asesmen Ujian?</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+                Anda telah menjawab <span id="modal-answered-count" class="font-bold text-brand-700">0</span> dari 40 soal. Pastikan semua soal telah dikerjakan dengan benar sebelum mengirim jawaban.
+            </p>
+            <div class="flex gap-3 pt-2">
+                <button onclick="closeFinishModal()" class="w-1/2 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs transition">
+                    Periksa Kembali
+                </button>
+                <button onclick="submitExamFinal()" class="w-1/2 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs transition shadow">
+                    Ya, Kirim Sekarang
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        /* ==========================================================================
+           QUESTION DATASET (40 QUESTIONS CONTEXTUALIZED TO MALUKU & TEHORU)
+           ========================================================================== */
+        const questionsDataset = [
+            // --- 25 PILIHAN GANDA (1-25) ---
+            {
+                id: 1,
+                type: 'mc',
+                text: 'Istilah "Ekonomi" berasal dari bahasa Yunani yaitu <i>Oikonomia</i>. Kata <i>Oikos</i> dan <i>Nomos</i> masing-masing memiliki arti...',
+                options: [
+                    'A. Aturan dan Rumah tangga',
+                    'B. Rumah tangga dan Aturan / Hukum',
+                    'C. Kelangkaan dan Kemakmuran',
+                    'D. Produksi dan Konsumsi',
+                    'E. Kebutuhan dan Keinginan'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 2,
+                type: 'mc',
+                text: 'Bapak Ilmu Ekonomi Dunia yang mengemukakan teori pasar bebas dan menulis buku <i>The Wealth of Nations</i> (1776) adalah...',
+                options: [
+                    'A. David Ricardo',
+                    'B. Thomas Robert Malthus',
+                    'C. Adam Smith',
+                    'D. John Maynard Keynes',
+                    'E. Alfred Marshall'
+                ],
+                answer: 'C'
+            },
+            {
+                id: 3,
+                type: 'mc',
+                text: 'Masalah ekonomi paling mendasar yang dihadapi oleh setiap manusia maupun masyarakat disebabkan oleh...',
+                options: [
+                    'A. Jumlah uang yang beredar terlalu sedikit',
+                    'B. Kebutuhan manusia terbatas sedangkan alat pemuas tidak terbatas',
+                    'C. Kebutuhan manusia tidak terbatas sedangkan alat pemuas jumlahnya terbatas',
+                    'D. Perkembangan teknologi yang sangat cepat',
+                    'E. Kurangnya tenaga kerja ahli di daerah'
+                ],
+                answer: 'C'
+            },
+            {
+                id: 4,
+                type: 'mc',
+                text: 'Seorang nelayan di pesisir Tehoru membutuhkan jaring baru untuk menangkap ikan di laut. Berdasarkan tingkat kepentingannya, jaring bagi nelayan merupakan kebutuhan...',
+                options: [
+                    'A. Sekunder',
+                    'B. Primer',
+                    'C. Tersier',
+                    'D. Jasmani',
+                    'E. Yang akan datang'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 5,
+                type: 'mc',
+                text: 'Ibu Fatimah membeli beras untuk konsumsi sehari-hari keluarga dan membeli perhiasan emas sebagai koleksi. Urutan jenis kebutuhan tersebut secara berurutan adalah...',
+                options: [
+                    'A. Primer dan Sekunder',
+                    'B. Sekunder dan Tersier',
+                    'C. Jasmani dan Rohani',
+                    'D. Primer dan Tersier',
+                    'E. Sekarang dan Yang akan datang'
+                ],
+                answer: 'D'
+            },
+            {
+                id: 6,
+                type: 'mc',
+                text: 'Ketika terjadi gelombang tinggi di Laut Seram, pasokan ikan di Pasar Tehoru menurun tajam sehingga harga ikan melonjak tinggi. Fenomena ini menggambarkan konsep...',
+                options: [
+                    'A. Skala Prioritas',
+                    'B. Kelangkaan (Scarcity)',
+                    'C. Biaya Peluang',
+                    'D. Motif Ekonomi',
+                    'E. Tindakan Irrasional'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 7,
+                type: 'mc',
+                text: 'Barang konsumsi yang penggunaannya harus saling melengkapi agar memberikan kegunaan optimal dinamakan barang...',
+                options: [
+                    'A. Substitusi',
+                    'B. Komplementer',
+                    'C. Bebas',
+                    'D. Ekonomis',
+                    'E. Illith'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 8,
+                type: 'mc',
+                text: 'Sagu dan beras merupakan contoh dua barang yang saling menggantikan fungsi kenyang bagi masyarakat Maluku. Kedudukan sagu terhadap beras dinamakan barang...',
+                options: [
+                    'A. Komplementer',
+                    'B. Substitusi',
+                    'C. Produksi',
+                    'D. Mentah',
+                    'E. Bebas'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 9,
+                type: 'mc',
+                text: 'Udara segar yang kita hirup di pegunungan Tehoru tanpa perlu membayar merupakan contoh dari barang...',
+                options: [
+                    'A. Ekonomis',
+                    'B. Bebas',
+                    'C. Illith',
+                    'D. Komplementer',
+                    'E. Modal'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 10,
+                type: 'mc',
+                text: 'Air sungai yang jernih sangat bermanfaat, namun jika terjadi banjir bandang yang merusak permukiman, air tersebut berubah fungsi menjadi barang...',
+                options: [
+                    'A. Substitusi',
+                    'B. Illith',
+                    'C. Bebas',
+                    'D. Ekonomis',
+                    'E. Jadi'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 11,
+                type: 'mc',
+                text: 'Dalam menyusun skala prioritas kebutuhan, pertimbangan utama yang harus didahulukan oleh seorang siswa adalah...',
+                options: [
+                    'A. Keinginan dan tren terkini',
+                    'B. Keinginan teman sebaya',
+                    'C. Tingkat urgensi dan manfaat langsung untuk pendidikan',
+                    'D. Harga barang yang paling mahal',
+                    'E. Diskon harga dari penjual'
+                ],
+                answer: 'C'
+            },
+            {
+                id: 12,
+                type: 'mc',
+                text: 'Seorang petani pala di Tehoru memiliki modal Rp 5.000.000. Ia dihadapkan pada dua pilihan: membeli pupuk organik atau membeli perahu motorized. Jika ia memilih membeli pupuk, maka nilai kesempatan dari perahu yang dikorbankan disebut...',
+                options: [
+                    'A. Biaya Eksplisit',
+                    'B. Biaya Peluang (Opportunity Cost)',
+                    'C. Biaya Implisit',
+                    'D. Biaya Sehari-hari',
+                    'E. Biaya Variabel'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 13,
+                type: 'mc',
+                text: 'Usaha untuk memperoleh hasil tertentu dengan pengorbanan sekecil-kecilnya dinamakan...',
+                options: [
+                    'A. Motif Ekonomi',
+                    'B. Hukum Ekonomi',
+                    'C. Prinsip Ekonomi',
+                    'D. Tindakan Ekonomi',
+                    'E. Sistem Ekonomi'
+                ],
+                answer: 'C'
+            },
+            {
+                id: 14,
+                type: 'mc',
+                text: 'Alasan atau dorongan yang menyebabkan seseorang melakukan tindakan ekonomi disebut...',
+                options: [
+                    'A. Prinsip Ekonomi',
+                    'B. Pola Ekonomi',
+                    'C. Motif Ekonomi',
+                    'D. Hukum Ekonomi',
+                    'E. Rasionalitas'
+                ],
+                answer: 'C'
+            },
+            {
+                id: 15,
+                type: 'mc',
+                text: 'Seorang pedagang di Pasar Tehoru menyisihkan sebagian keuntungan dagangnya untuk menyantuni anak yatim. Motif yang mendasari pedagang tersebut adalah motif...',
+                options: [
+                    'A. Memenuhi kebutuhan sendiri',
+                    'B. Memperoleh kekuasaan',
+                    'C. Sosial / Kemanusiaan',
+                    'D. Mendapatkan penghargaan',
+                    'E. Mencari keuntungan maksimal'
+                ],
+                answer: 'C'
+            },
+            {
+                id: 16,
+                type: 'mc',
+                text: 'Tindakan ekonomi yang berlandaskan perhitungan matang dan pertimbangan rasional dinamakan tindakan ekonomi...',
+                options: [
+                    'A. Irrasional',
+                    'B. Rasional',
+                    'C. Emosional',
+                    'D. Spontan',
+                     me: 'E. Tradisional'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 17,
+                type: 'mc',
+                text: 'Cabang ilmu ekonomi yang mempelajari perilaku pelaku-pelaku ekonomi secara individu seperti pasar, harga, dan rumah tangga konsumen dinamakan ilmu ekonomi...',
+                options: [
+                    'A. Makro',
+                    'B. Mikro',
+                    'C. Moneter',
+                    'D. Syariah',
+                    'E. Internasional'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 18,
+                type: 'mc',
+                text: 'Masalah ekonomi makro yang berkaitan dengan kenaikan harga barang dan jasa secara umum dan terus menerus dinamakan...',
+                options: [
+                    'A. Deflasi',
+                    'B. Pengangguran',
+                    'C. Inflasi',
+                    'D. Kemiskinan',
+                    'E. Kelangkaan'
+                ],
+                answer: 'C'
+            },
+            {
+                id: 19,
+                type: 'mc',
+                text: 'Tiga kegiatan pokok ekonomi yang saling terikat dalam kehidupan masyarakat meliputi...',
+                options: [
+                    'A. Pengeluaran, Tabungan, dan Investasi',
+                    'B. Produksi, Distribusi, dan Konsumsi',
+                    'C. Pembelian, Penjualan, dan Pengangkutan',
+                    'D. Perencanaan, Pelaksanaan, dan Pengawasan',
+                    'E. Ekspor, Impor, dan Pasar'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 20,
+                type: 'mc',
+                text: 'Penyaluran hasil perikanan dari nelayan di Tehoru ke pasar kota Masohi menggunakan angkutan darat merupakan bentuk kegiatan...',
+                options: [
+                    'A. Produksi',
+                    'B. Distribusi',
+                    'C. Konsumsi',
+                    'D. Eksploitasi',
+                    'E. Investasi'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 21,
+                type: 'mc',
+                text: 'Pernyataan ilmu ekonomi yang menjelaskan kenyataan ekonomi sebagaimana adanya tanpa menilai baik atau buruk dinamakan ekonomi...',
+                options: [
+                    'A. Normatif',
+                    'B. Positif',
+                    'C. Terapan',
+                    'D. Syariah',
+                    'E. Mikro'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 22,
+                type: 'mc',
+                text: 'Pernyataan "Pemerintah daerah sebaiknya memberikan subsidi pupuk bagi petani pala untuk meningkatkan kesejahteraan" termasuk dalam analisis ekonomi...',
+                options: [
+                    'A. Positif',
+                    'B. Deskriptif',
+                    'C. Normatif',
+                    'D. Moneter',
+                    'E. Kuantitatif'
+                ],
+                answer: 'C'
+            },
+            {
+                id: 23,
+                type: 'mc',
+                text: 'Salah satu penyebab utama terjadinya kelangkaan sumber daya alam kelautan adalah...',
+                options: [
+                    'A. Pembudidayaan ikan secara modern',
+                    'B. Eksploitasi berlebihan dan penggunaan alat tangkap ilegal',
+                    'C. Tingginya minat masyarakat memakan ikan',
+                    'D. Cuaca yang selalu cerah',
+                    'E. Luas wilayah laut yang membentang'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 24,
+                type: 'mc',
+                text: 'Nilai guna suatu barang akan bertambah apabila tempat barang tersebut dipindahkan (misal ikan dari laut dibawa ke pasar kota). Hal ini disebut nilai guna...',
+                options: [
+                    'A. Form Utility (Bentuk)',
+                    'B. Time Utility (Waktu)',
+                    'C. Place Utility (Tempat)',
+                    'D. Ownership Utility (Kepemilikan)',
+                    'E. Service Utility (Pelayanan)'
+                ],
+                answer: 'C'
+            },
+            {
+                id: 25,
+                type: 'mc',
+                text: 'Perhatikan daftar barang kebutuhan berikut: (1) Buku pelajaran, (2) Kuota internet belajar, (3) Sepatu olahraga merk terkenal, (4) Sarapan pagi, (5) Game konsol. Yang tergolong kebutuhan skala prioritas utama seorang siswa SMA adalah...',
+                options: [
+                    'A. (1), (2), dan (4)',
+                    'B. (1), (3), dan (5)',
+                    'C. (2), (3), dan (4)',
+                    'D. (3), (4), dan (5)',
+                    'E. (2), (4), dan (5)'
+                ],
+                answer: 'A'
+            },
+
+            // --- 5 BENAR / SALAH (26-30) ---
+            {
+                id: 26,
+                type: 'tf',
+                text: 'Biaya peluang (opportunity cost) adalah biaya tunai yang dikeluarkan secara langsung untuk membeli barang tertentu.',
+                options: ['Benar', 'Salah'],
+                answer: 'Salah'
+            },
+            {
+                id: 27,
+                type: 'tf',
+                text: 'Minyak bumi dan gas alam merupakan contoh alat pemuas kebutuhan yang termasuk dalam kelompok sumber daya alam yang dapat diperbarui.',
+                options: ['Benar', 'Salah'],
+                answer: 'Salah'
+            },
+            {
+                id: 28,
+                type: 'tf',
+                text: 'Seorang konsumen yang menerapkan prinsip ekonomi akan berusaha mengoptimalkan kepuasan dengan pengeluaran anggaran yang efisien.',
+                options: ['Benar', 'Salah'],
+                answer: 'Benar'
+            },
+            {
+                id: 29,
+                type: 'tf',
+                text: 'Sagu dan beras merupakan contoh dua barang yang memiliki hubungan komplementer dalam masyarakat Maluku.',
+                options: ['Benar', 'Salah'],
+                answer: 'Salah'
+            },
+            {
+                id: 30,
+                type: 'tf',
+                text: 'Pengikisan pesisir atau abrasi dapat mempengaruhi ketersediaan lahan permukiman dan kelangsungan ekonomi masyarakat pesisir.',
+                options: ['Benar', 'Salah'],
+                answer: 'Benar'
+            },
+
+            // --- 5 MENJODOHKAN (31-35) ---
+            {
+                id: 31,
+                type: 'matching',
+                text: 'Jodohkan istilah ekonomi berikut dengan penjelasan yang paling sesuai!',
+                targetConcept: 'Alat Pemuas Kebutuhan Bebas',
+                pairs: [
+                    { id: 'opt1', text: 'Sinar matahari dan udara segar di alam' },
+                    { id: 'opt2', text: 'Seragam sekolah dan buku tulis' },
+                    { id: 'opt3', text: 'Bensin untuk kendaraan bermotor' }
+                ],
+                answer: 'opt1'
+            },
+            {
+                id: 32,
+                type: 'matching',
+                text: 'Jodohkan bentuk nilai guna (utility) berikut!',
+                targetConcept: 'Form Utility (Nilai Guna Bentuk)',
+                pairs: [
+                    { id: 'opt1', text: 'Kayu jati diubah menjadi meja belajar' },
+                    { id: 'opt2', text: 'Payung digunakan saat hujan deras' },
+                    { id: 'opt3', text: 'Ikan segar dibawa ke daerah pegunungan' }
+                ],
+                answer: 'opt1'
+            },
+            {
+                id: 33,
+                type: 'matching',
+                text: 'Jodohkan pengelompokan kebutuhan manusia berikut!',
+                targetConcept: 'Kebutuhan Jasmani',
+                pairs: [
+                    { id: 'opt1', text: 'Makanan bergizi dan olahraga teratur' },
+                    { id: 'opt2', text: 'Ibadah dan mendengarkan ceramah agama' },
+                    { id: 'opt3', text: 'Menabung uang di bank' }
+                ],
+                answer: 'opt1'
+            },
+            {
+                id: 34,
+                type: 'matching',
+                text: 'Jodohkan cabang studi ilmu ekonomi berikut!',
+                targetConcept: 'Ekonomi Makro',
+                pairs: [
+                    { id: 'opt1', text: 'Mengkaji pengangguran, inflasi, dan pertumbuhan nasional' },
+                    { id: 'opt2', text: 'Mengkaji penetapan harga satu kios di pasar' },
+                    { id: 'opt3', text: 'Mengkaji biaya produksi perseorangan' }
+                ],
+                answer: 'opt1'
+            },
+            {
+                id: 35,
+                type: 'matching',
+                text: 'Jodohkan dorongan tindakan ekonomi berikut!',
+                targetConcept: 'Motif Mendapatkan Keuntungan',
+                pairs: [
+                    { id: 'opt1', text: 'Pedagang rempah menaikkan efisiensi dagangnya' },
+                    { id: 'opt2', text: 'Donatur memberikan bantuan musibah bencana' },
+                    { id: 'opt3', text: 'Siswa belajar keras untuk menjadi juara kelas' }
+                ],
+                answer: 'opt1'
+            },
+
+            // --- 5 STUDI KASUS / HOTS (36-40) ---
+            {
+                id: 36,
+                type: 'case',
+                text: '<strong>KASUS 1: Kelangkaan Bahan Bakar dan Transportasi Laut Tehoru</strong><br><br>Pada musim angin timur, pasokan bahan bakar minyak (BBM) jenis solar ke wilayah Tehoru mengalami keterlambatan pengiriman kapal perintis. Akibatnya, sebagian besar nelayan lokal tidak dapat melaut selama 1 minggu, dan harga ikan segar di pasar Tehoru naik sebesar 60%.<br><br>Berdasarkan analisis kasus di atas, langkah terbaik yang sesuai prinsip skala prioritas bagi masyarakat konsumen di Tehoru adalah...',
+                options: [
+                    'A. Menjual perahu nelayan untuk membeli beras sebanyak-banyaknya',
+                    'B. Mengalihkan konsumsi lauk ke sumber protein alternatif seperti tahu, tempe, atau telur yang harganya lebih stabil',
+                    'C. Memaksa nelayan melaut tanpa solar meskipun berbahaya',
+                    'D. Memborong seluruh pasokan ikan segar tanpa memedulikan harga',
+                     me: 'E. Menghentikan semua aktivitas ekonomi di rumah tangga'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 37,
+                type: 'case',
+                text: '<strong>KASUS 2: Analisis Biaya Peluang Hasil Panen Pala</strong><br><br>Bapak Halim memiliki lahan perkebunan pala di Tehoru. Setelah panen, beliau memperoleh pendapatan tunai sebesar Rp 10.000.000. Bapak Halim memiliki 2 opsi alokasi dana:<br>1. Menginvestasikan uangnya untuk membeli mesin pengering biji pala modern.<br>2. Menggunakan uang tersebut untuk merenovasi warung kelontong keluarganya.<br><br>Apabila Bapak Halim memutuskan untuk membeli <strong>mesin pengering biji pala modern</strong>, maka biaya peluang (opportunity cost) yang timbul adalah...',
+                options: [
+                    'A. Kehilangan uang tunai Rp 10.000.000',
+                    'B. Kesempatan untuk merenovasi warung kelontong keluarga dan potensi pendapatan dari warung tersebut',
+                    'C. Biaya perawatan mesin pengering setiap bulan',
+                    'D. Keuntungan dari hasil penjualan biji pala yang kering',
+                    'E. Harga pupuk tanaman pala di pasar'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 38,
+                type: 'case',
+                text: '<strong>KASUS 3: Pengelolaan Uang Saku Siswa SMA</strong><br><br>Siti adalah siswi kelas X SMAS Al-Hilaal Tehoru. Setiap bulan ia mendapatkan uang saku sebesar Rp 300.000 dari orang tuanya. Bulan ini Siti memiliki beberapa daftar rencana kebutuhan:<br>- Membeli buku paket Ekonomi: Rp 75.000<br>- Membeli kuota internet belajar: Rp 50.000<br>- Membeli sepatu olahraga merek terkenal: Rp 200.000<br>- Uang transportasi angkutan sekolah: Rp 100.000<br>- Tabungan masa depan: Rp 25.000<br><br>Agar uang saku Siti cukup dan alokasinya rasional, kombinasi susunan skala prioritas yang paling tepat adalah...',
+                options: [
+                    'A. Membeli sepatu merek terkenal dan kuota internet',
+                    'B. Membeli buku paket, kuota internet, uang transportasi, dan menabung',
+                    'C. Membeli sepatu merek terkenal dan buku paket saja',
+                    'D. Mempergunakan seluruh uang untuk transportasi dan jajan',
+                    'E. Mengabaikan buku paket dan membeli sepatu baru'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 39,
+                type: 'case',
+                text: '<strong>KASUS 4: Masalah Pokok Ekonomi di Daerah Pesisir</strong><br><br>Koperasi Nelayan Tehoru mengidentifikasi bahwa hasil tangkapan ikan tuna segar melimpah, namun sering busuk sebelum sampai ke pembeli di luar pulau karena minimnya fasilitas pendingin (cold storage). Masalah ekonomi yang mendasar ini berkaitan dengan masalah pokok ekonomi modern yaitu...',
+                options: [
+                    'A. <i>WHAT</i> (Barang apa yang harus diproduksi)',
+                    'B. <i>HOW</i> (Bagaimana cara memproduksi dan mengawetkan/mendistribusikan efisien)',
+                    'C. <i>FOR WHOM</i> (Untuk siapa barang diproduksi)',
+                    'D. <i>WHEN</i> (Kapan waktu diproduksi)',
+                    'E. <i>WHERE</i> (Di mana lokasi menjual)'
+                ],
+                answer: 'B'
+            },
+            {
+                id: 40,
+                type: 'case',
+                text: '<strong>KASUS 5: Tindakan Ekonomi Efisien di Pasar Tradisional</strong><br><br>Ibu Rahma pergi ke Pasar Tehoru dengan membawa catatan belanja. Sebelum membeli bumbu dapur dan cengkeh, beliau membandingkan harga di dua kios yang berbeda untuk mendapatkan harga terbaik dengan kualitas barang yang sama baiknya.<br><br>Perilaku Ibu Rahma tersebut mencerminkan...',
+                options: [
+                    'A. Tindakan ekonomi yang irrasional dan membuang waktu',
+                    'B. Penerapan prinsip ekonomi konsumen untuk mengoptimalkan pengeluaran',
+                    'C. Motif ekonomi untuk mencari kekuasaan pasar',
+                    'D. Kebutuhan tersier yang berlebihan',
+                    'E. Praktik persaingan tidak sehat'
+                ],
+                answer: 'B'
+            }
+        ];
+
+        /* ==========================================================================
+           APPLICATION STATE & VARIABLES
+           ========================================================================== */
+        let currentStudent = { name: '', class: '', no: '' };
+        let userAnswers = {}; // { qId: answerValue }
+        let flaggedQuestions = {}; // { qId: true/false }
+        let currentQuestionIndex = 0;
+        let timerSeconds = 90 * 60; // 90 minutes
+        let timerInterval = null;
+        let examSubmitted = false;
+
+        /* ==========================================================================
+           NAVIGATION & VIEW SWITCHING
+           ========================================================================== */
+        function switchView(viewId) {
+            const views = ['home', 'student-info', 'instructions', 'exam', 'result', 'admin-login', 'admin-dashboard'];
+            views.forEach(v => {
+                const el = document.getElementById(`view-${v}`);
+                if (el) el.classList.add('hidden');
+            });
+            
+            const target = document.getElementById(`view-${viewId}`);
+            if (target) target.classList.remove('hidden');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* ==========================================================================
+           STUDENT FORM & START EXAM
+           ========================================================================== */
+        function handleStudentForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('input-student-name').value.trim();
+            const cls = document.getElementById('input-student-class').value;
+            const no = document.getElementById('input-student-no').value;
+
+            if (!name || !cls || !no) {
+                alert('Mohon lengkapi seluruh data identitas!');
+                return;
+            }
+
+            currentStudent = { name, class: cls, no };
+            switchView('instructions');
+        }
+
+        function startExam() {
+            const acceptChecked = document.getElementById('accept-instructions').checkboxes || document.getElementById('accept-instructions').checked;
+            if (!acceptChecked) {
+                alert('Anda harus menyetujui petunjuk ujian terlebih dahulu!');
+                return;
+            }
+
+            userAnswers = {};
+            flaggedQuestions = {};
+            currentQuestionIndex = 0;
+            examSubmitted = false;
+
+            // Show Header Timer
+            document.getElementById('header-timer').classList.remove('hidden');
+            document.getElementById('header-timer').classList.add('flex');
+            startTimer();
+
+            // Render Exam State
+            renderQuestionGrid();
+            loadQuestion(currentQuestionIndex);
+
+            switchView('exam');
+        }
+
+        /* ==========================================================================
+           TIMER LOGIC
+           ========================================================================== */
+        function startTimer() {
+            clearInterval(timerInterval);
+            timerSeconds = 90 * 60;
+
+            timerInterval = setInterval(() => {
+                timerSeconds--;
+                
+                const mins = Math.floor(timerSeconds / 60);
+                const secs = timerSeconds % 60;
+                const formatted = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                
+                document.getElementById('timer-display').innerText = formatted;
+
+                if (timerSeconds <= 300) { // 5 mins left warning
+                    document.getElementById('header-timer').classList.add('bg-red-700');
+                }
+
+                if (timerSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    alert('Waktu ujian telah habis! Sistem akan mengirim jawaban Anda secara otomatis.');
+                    submitExamFinal();
+                }
+            }, 1000);
+        }
+
+        /* ==========================================================================
+           EXAM QUESTION RENDERER & INTERACTION
+           ========================================================================== */
+        function renderQuestionGrid() {
+            const grid = document.getElementById('question-grid');
+            grid.innerHTML = '';
+
+            questionsDataset.forEach((q, idx) => {
+                const isAnswered = userAnswers[q.id] !== undefined;
+                const isFlagged = flaggedQuestions[q.id] === true;
+                const isCurrent = idx === currentQuestionIndex;
+
+                let btnClass = 'bg-slate-200 text-slate-700 hover:bg-slate-300';
+                if (isFlagged) {
+                    btnClass = 'bg-amber-400 text-slate-900 font-bold';
+                } else if (isAnswered) {
+                    btnClass = 'bg-emerald-500 text-white font-bold';
+                }
+
+                if (isCurrent) {
+                    btnClass += ' ring-2 ring-brand-800 ring-offset-2';
+                }
+
+                const btn = document.createElement('button');
+                btn.className = `h-9 rounded-lg font-medium text-xs transition flex items-center justify-center ${btnClass}`;
+                btn.innerText = idx + 1;
+                btn.onclick = () => jumpToQuestion(idx);
+                grid.appendChild(btn);
+            });
+
+            // Update answered count display
+            const count = Object.keys(userAnswers).length;
+            document.getElementById('answered-count').innerText = count;
+        }
+
+        function loadQuestion(idx) {
+            currentQuestionIndex = idx;
+            const q = questionsDataset[idx];
+
+            document.getElementById('current-q-num').innerText = idx + 1;
+            
+            // Badge & Type
+            const badge = document.getElementById('question-type-badge');
+            if (q.type === 'mc') badge.innerText = 'Pilihan Ganda';
+            else if (q.type === 'tf') badge.innerText = 'Benar / Salah';
+            else if (q.type === 'matching') badge.innerText = 'Menjodohkan';
+            else if (q.type === 'case') badge.innerText = 'Studi Kasus HOTS';
+
+            // Question Text
+            document.getElementById('question-text').innerHTML = q.text;
+
+            // Options Renderer
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+
+            const currentAns = userAnswers[q.id];
+
+            if (q.type === 'mc' || q.type === 'case') {
+                q.options.forEach(opt => {
+                    const optKey = opt.charAt(0); // A, B, C, D, E
+                    const isSelected = currentAns === optKey;
+
+                    const div = document.createElement('div');
+                    div.className = `p-4 rounded-xl border transition cursor-pointer flex items-center space-x-3 ${
+                        isSelected 
+                        ? 'border-brand-600 bg-brand-50 text-brand-900 shadow-sm font-semibold' 
+                        : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700'
+                    }`;
+                    div.onclick = () => selectAnswer(q.id, optKey);
+
+                    div.innerHTML = `
+                        <div class="w-6 h-6 rounded-full border flex items-center justify-center text-xs font-bold ${
+                            isSelected ? 'bg-brand-600 text-white border-brand-600' : 'border-slate-400 text-slate-500'
+                        }">
+                            ${optKey}
+                        </div>
+                        <div class="text-xs sm:text-sm leading-relaxed">${opt.substring(3)}</div>
+                    `;
+                    container.appendChild(div);
+                });
+            } 
+            else if (q.type === 'tf') {
+                q.options.forEach(opt => {
+                    const isSelected = currentAns === opt;
+                    const div = document.createElement('div');
+                    div.className = `p-4 rounded-xl border transition cursor-pointer flex items-center justify-center space-x-3 text-sm ${
+                        isSelected 
+                        ? 'border-brand-600 bg-brand-50 text-brand-900 shadow-sm font-bold' 
+                        : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700'
+                    }`;
+                    div.onclick = () => selectAnswer(q.id, opt);
+                    div.innerHTML = `
+                        <i class="fa-regular ${isSelected ? 'fa-circle-check text-brand-600' : 'fa-circle text-slate-400'}"></i>
+                        <span>${opt}</span>
+                    `;
+                    container.appendChild(div);
+                });
+            }
+            else if (q.type === 'matching') {
+                const hint = document.createElement('p');
+                hint.className = "text-xs text-brand-800 font-semibold mb-2 bg-brand-50 p-2.5 rounded-lg border border-brand-200";
+                hint.innerHTML = `<i class="fa-solid fa-link mr-1.5"></i> Pasangkan konsep berikut: <span class="text-slate-900 underline">${q.targetConcept}</span>`;
+                container.appendChild(hint);
+
+                q.pairs.forEach(pair => {
+                    const isSelected = currentAns === pair.id;
+                    const div = document.createElement('div');
+                    div.className = `p-4 rounded-xl border transition cursor-pointer flex items-center justify-between text-xs sm:text-sm ${
+                        isSelected 
+                        ? 'border-brand-600 bg-brand-50 text-brand-900 shadow-sm font-semibold' 
+                        : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700'
+                    }`;
+                    div.onclick = () => selectAnswer(q.id, pair.id);
+                    div.innerHTML = `
+                        <span>${pair.text}</span>
+                        <i class="fa-solid ${isSelected ? 'fa-check-circle text-brand-600' : 'fa-plus text-slate-400'}"></i>
+                    `;
+                    container.appendChild(div);
+                });
+            }
+
+            // Flag Button State
+            const btnFlag = document.getElementById('btn-flag');
+            if (flaggedQuestions[q.id]) {
+                btnFlag.classList.add('bg-amber-100', 'text-amber-700', 'border-amber-300');
+            } else {
+                btnFlag.classList.remove('bg-amber-100', 'text-amber-700', 'border-amber-300');
+            }
+
+            // Nav buttons state
+            document.getElementById('btn-prev').disabled = idx === 0;
+            document.getElementById('btn-prev').style.opacity = idx === 0 ? '0.5' : '1';
+
+            if (idx === questionsDataset.length - 1) {
+                document.getElementById('btn-next').classList.add('hidden');
+                document.getElementById('btn-submit-exam').classList.remove('hidden');
+            } else {
+                document.getElementById('btn-next').classList.remove('hidden');
+                document.getElementById('btn-submit-exam').classList.add('hidden');
+            }
+
+            renderQuestionGrid();
+        }
+
+        function selectAnswer(qId, val) {
+            userAnswers[qId] = val;
+            loadQuestion(currentQuestionIndex);
+        }
+
+        function toggleFlagCurrentQuestion() {
+            const q = questionsDataset[currentQuestionIndex];
+            flaggedQuestions[q.id] = !flaggedQuestions[q.id];
+            loadQuestion(currentQuestionIndex);
+        }
+
+        function navigateQuestion(dir) {
+            const newIndex = currentQuestionIndex + dir;
+            if (newIndex >= 0 && newIndex < questionsDataset.length) {
+                loadQuestion(newIndex);
+            }
+        }
+
+        function jumpToQuestion(idx) {
+            loadQuestion(idx);
+        }
+
+        /* ==========================================================================
+           SUBMIT & SCORING LOGIC
+           ========================================================================== */
+        function confirmFinishExam() {
+            const count = Object.keys(userAnswers).length;
+            document.getElementById('modal-answered-count').innerText = count;
+            document.getElementById('finish-modal').classList.remove('hidden');
+        }
+
+        function closeFinishModal() {
+            document.getElementById('finish-modal').classList.add('hidden');
+        }
+
+        function submitExamFinal() {
+            closeFinishModal();
+            clearInterval(timerInterval);
+            document.getElementById('header-timer').classList.add('hidden');
+
+            let correctCount = 0;
+            let incorrectCount = 0;
+
+            questionsDataset.forEach(q => {
+                const userAns = userAnswers[q.id];
+                if (userAns && userAns === q.answer) {
+                    correctCount++;
+                } else {
+                    incorrectCount++;
+                }
+            });
+
+            // Score formula out of 100
+            const score = Math.round((correctCount / questionsDataset.length) * 100);
+
+            // Determine status & feedback
+            let status = 'Sangat Baik';
+            let badgeClass = 'bg-emerald-500 text-white';
+            let feedback = '';
+
+            if (score >= 85) {
+                status = 'Sangat Baik';
+                badgeClass = 'bg-emerald-500 text-white';
+                feedback = 'Luar biasa! Anda telah menguasai seluruh indikator kompetensi Pengantar Ilmu Ekonomi kelas X dengan sangat mendalam, termasuk analisis kelangkaan, skala prioritas, dan konsep biaya peluang.';
+            } else if (score >= 70) {
+                status = 'Baik';
+                badgeClass = 'bg-blue-600 text-white';
+                feedback = 'Hasil yang baik! Anda telah memahami sebagian besar materi ekonomi. Tingkatkan lagi pemahaman pada bagian studi kasus analisis masalah ekonomi lokal dan perhitungan skala prioritas.';
+            } else if (score >= 60) {
+                status = 'Cukup';
+                badgeClass = 'bg-amber-500 text-white';
+                feedback = 'Cukup baik. Namun Anda disarankan untuk mengulas kembali konsep dasar kelangkaan, jenis-jenis kebutuhan, serta perbedaan antara motif dan prinsip ekonomi.';
+            } else {
+                status = 'Perlu Bimbingan';
+                badgeClass = 'bg-red-500 text-white';
+                feedback = 'Anda memerlukan bimbingan tambahan. Tetap semangat dan pelajari kembali materi Pengantar Ilmu Ekonomi bersama guru dan teman sejawat.';
+            }
+
+            // Render Result Page
+            document.getElementById('res-student-name').innerText = currentStudent.name;
+            document.getElementById('res-student-meta').innerText = `Kelas: ${currentStudent.class} | No. Absen: ${currentStudent.no}`;
+            document.getElementById('res-student-time').innerText = `Waktu Selesai: ${new Date().toLocaleString('id-ID')}`;
+            document.getElementById('res-final-score').innerText = score;
+            document.getElementById('res-correct').innerText = correctCount;
+            document.getElementById('res-incorrect').innerText = incorrectCount;
+            document.getElementById('res-feedback-text').innerText = feedback;
+            
+            const badgeEl = document.getElementById('res-status-badge');
+            badgeEl.innerText = status;
+            badgeEl.className = `px-3 py-1 text-xs font-bold rounded-full inline-block ${badgeClass}`;
+
+            // Save to LocalStorage for Teacher Dashboard
+            saveStudentResult({
+                name: currentStudent.name,
+                class: currentStudent.class,
+                no: currentStudent.no,
+                score: score,
+                correct: correctCount,
+                incorrect: incorrectCount,
+                timestamp: new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })
+            });
+
+            switchView('result');
+        }
+
+        /* ==========================================================================
+           LOCALSTORAGE & TEACHER ADMIN DASHBOARD
+           ========================================================================== */
+        function saveStudentResult(record) {
+            let records = JSON.parse(localStorage.getItem('asesmen_ekonomi_results') || '[]');
+            records.push(record);
+            localStorage.setItem('asesmen_ekonomi_results', JSON.stringify(records));
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const pin = document.getElementById('input-admin-pin').value;
+            if (pin === '1234') {
+                loadAdminDashboard();
+                switchView('admin-dashboard');
+            } else {
+                alert('PIN Akses Salah!');
+            }
+        }
+
+        function loadAdminDashboard() {
+            const records = JSON.parse(localStorage.getItem('asesmen_ekonomi_results') || '[]');
+            
+            // Render Stats
+            document.getElementById('admin-stat-total').innerText = records.length;
+            
+            if (records.length > 0) {
+                const scores = records.map(r => r.score);
+                const avg = (scores.reduce((a, b) => a + b, 0) / scores.length).toFixed(1);
+                const max = Math.max(...scores);
+                const min = Math.min(...scores);
+
+                document.getElementById('admin-stat-avg').innerText = avg;
+                document.getElementById('admin-stat-max').innerText = max;
+                document.getElementById('admin-stat-min').innerText = min;
+            } else {
+                document.getElementById('admin-stat-avg').innerText = '0';
+                document.getElementById('admin-stat-max').innerText = '0';
+                document.getElementById('admin-stat-min').innerText = '0';
+            }
+
+            renderAdminTable(records);
+        }
+
+        function renderAdminTable(records) {
+            const tbody = document.getElementById('admin-table-body');
+            tbody.innerHTML = '';
+
+            if (records.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" class="p-4 text-center text-slate-400">Belum ada data pengerjaan ujian dari siswa.</td></tr>`;
+                return;
+            }
+
+            records.forEach((r, idx) => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-50 transition';
+                tr.innerHTML = `
+                    <td class="p-3 font-semibold text-slate-500">${idx + 1}</td>
+                    <td class="p-3 font-bold text-slate-800">${r.name}</td>
+                    <td class="p-3">${r.class}</td>
+                    <td class="p-3">${r.no}</td>
+                    <td class="p-3 text-emerald-600 font-bold">${r.correct}</td>
+                    <td class="p-3 text-red-500 font-bold">${r.incorrect}</td>
+                    <td class="p-3"><span class="px-2.5 py-1 bg-brand-100 text-brand-900 font-extrabold rounded-lg">${r.score}</span></td>
+                    <td class="p-3 text-slate-400">${r.timestamp}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filterAdminTable() {
+            const records = JSON.parse(localStorage.getItem('asesmen_ekonomi_results') || '[]');
+            const search = document.getElementById('admin-search-input').value.toLowerCase();
+            const clsFilter = document.getElementById('admin-class-filter').value;
+
+            const filtered = records.filter(r => {
+                const matchSearch = r.name.toLowerCase().includes(search);
+                const matchClass = clsFilter === 'ALL' || r.class === clsFilter;
+                return matchSearch && matchClass;
+            });
+
+            renderAdminTable(filtered);
+        }
+
+        function clearAllData() {
+            if (confirm('Apakah Anda yakin ingin menghapus seluruh rekapitulasi data hasil ujian siswa?')) {
+                localStorage.removeItem('asesmen_ekonomi_results');
+                loadAdminDashboard();
+            }
+        }
+
+        function exportToCSV() {
+            const records = JSON.parse(localStorage.getItem('asesmen_ekonomi_results') || '[]');
+            if (records.length === 0) {
+                alert('Tidak ada data untuk diekspor!');
+                return;
+            }
+
+            let csvContent = "data:text/csv;charset=utf-8,No,Nama Siswa,Kelas,No Absen,Benar,Salah,Nilai Akhir,Waktu Selesai\n";
+            records.forEach((r, idx) => {
+                csvContent += `${idx + 1},"${r.name}",${r.class},${r.no},${r.correct},${r.incorrect},${r.score},"${r.timestamp}"\n`;
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `Rekap_Nilai_Ekonomi_X_Tehoru_${new Date().toISOString().slice(0,10)}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
